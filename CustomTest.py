@@ -1,4 +1,5 @@
 import customtkinter as ctk
+from CTkToolTip import *
 
 ctk.set_appearance_mode("dark")
 ctk.set_default_color_theme("dark-blue")
@@ -23,9 +24,11 @@ class CustomTest():
 
         entry1 = ctk.CTkEntry(master=frame, placeholder_text="Username")
         entry1.pack(pady=12, padx=10)
+        tooltipUsername = CTkToolTip(entry1, message="Enter your username", delay=0.01)
 
         entry2 = ctk.CTkEntry(master=frame, placeholder_text="Password", show="*")
         entry2.pack(pady=12, padx=10)
+        tooltipPassword = CTkToolTip(entry2, message="Enter your password", delay=0.01)
 
         button = ctk.CTkButton(master=frame, text="Login", command=self.login)
         button.pack(pady=12, padx=10)
